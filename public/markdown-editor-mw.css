@@ -1,0 +1,39 @@
+div.markdown-editor-mw {
+  display:block;
+  width: 100%;
+}
+div.markdown-editor-mw div.block {
+  display:inline-block;
+  width:49.5%;
+  height:80vh;
+  overflow:auto;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+textarea#markdown-editor-mw-editor {
+  color: #333;
+  resize: none;
+  background: #f3f3f3;
+  width:100%;
+  height: 99.8%;
+  border: none;
+  box-sizing: border-box;         /* For IE and modern versions of Chrome */
+  -moz-box-sizing: border-box;    /* For Firefox                          */
+  -webkit-box-sizing: border-box; /* For Safari                           */
+}
+#markdown-editor-mw-out {
+  width:100%;
+}
+#markdown-editor-mw-message {
+  clear: both;
+  display: block;
+}
+#markdown-editor-mw-message.error {
+  background: #F0B2B2; /* red */
+}
+#markdown-editor-mw-message.success {
+  background: #B2E0C2; /* green */ 
+}
+#markdown-editor-mw-message.notice {
+  background: #ccc;
+}

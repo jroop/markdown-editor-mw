@@ -1,0 +1,43 @@
+div.markdown-editor-mw
+  //Start of markdown-editor-mw content and supporting libs
+  
+  script(src='/marked.js')
+  script(src='/highlight/highlight.pack.js')
+  script(src='/markdown-attr.js')
+  
+  script(src='#{mde.baseUrl}/markdown-editor-mw.js')
+  link(rel='stylesheet', href='#{mde.baseUrl}/markdown-editor-mw.css')
+  
+  - if (typeof mde.Editor !== 'undefined')
+    button(onclick='editor.mdeLoad()') Load File
+    button(onclick='editor.mdeSave()') Save File
+    a#markdown-editor-mw-view(href='#') View
+    a#markdown-editor-mw-index(href='#') Index
+    
+    div
+      div.block
+        textarea#markdown-editor-mw-editor(onkeyup='editor.mdeParse()')
+      div.block
+        div#markdown-editor-mw-out
+    div
+      span#markdown-editor-mw-message Status message here...
+    
+  - if (typeof mde.HTML !== 'undefined')
+    | !{mde.HTML}
+    
+  - if (typeof mde.Files !== 'undefined')
+    table
+      tr.header
+        td 
+          h3 Pages
+        td 
+          h3 Show
+        td 
+          h3 Edit
+      each f in mde.Files
+        tr
+          td #{f.name}
+          td
+            a(href='#{f.link}') show
+          td
+            a(href='#{f.edit}') edit
