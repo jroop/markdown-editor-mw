@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/jroop/markdown-editor-mw/issues"
   },
-  "homepage": "https://github.com/jroop/markdown-editor-mw"
+  "homepage": "https://github.com/jroop/markdown-editor-mw",
+  "dependencies": {
+    "highlight.js": "^8.5.0",
+    "markdown-attr": "0.0.4",
+    "marked": "^0.3.3"
+  }
 }
