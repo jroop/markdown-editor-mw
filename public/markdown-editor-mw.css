@@ -2,6 +2,13 @@ div.markdown-editor-mw {
   display:block;
   width: 100%;
 }
+
+div.markdown-editor-mw button, 
+a#markdown-editor-mw-view, 
+a#markdown-editor-mw-index {
+ margin: 0px 2px;
+}
+
 div.markdown-editor-mw div.block {
   display:inline-block;
   width:49.5%;
@@ -15,7 +22,8 @@ textarea#markdown-editor-mw-editor {
   resize: none;
   background: #f3f3f3;
   width:100%;
-  height: 99.8%;
+  height: 100%;
+  margin: 0px;
   border: none;
   box-sizing: border-box;         /* For IE and modern versions of Chrome */
   -moz-box-sizing: border-box;    /* For Firefox                          */
