@@ -26,6 +26,9 @@ var markdown_attr = require('markdown-attr');
     'view':null, //view that will want to render in external Jade //include ../markdown-editor-mw/views/markdown-editor-mw.jade
     'highlight_style':'default.css'
   };
+  var IC = { //internal config
+    'dirSet':null; 
+  };
   /*
    * Set highlighting for code
    */
@@ -53,11 +56,12 @@ var markdown_attr = require('markdown-attr');
    * Sets the directory to store the .md files creates one if it doesn't exist
    */
   var checkDir = function(req,res,next){
-    if(!exist(C.dir)){ //check to see string exists
-      C.dir = path.dirname(require.main.filename)+req.baseUrl;
+    if(!exist(IC.dirSet)){ //check to see string exists
+      if(!exist(C.dir)) C.dir = path.dirname(require.main.filename)+req.baseUrl;
       fs.mkdir(C.dir,function(err){ //make the directory
         if(err) console.log(err);
         console.log('Saving .md files here: '+C.dir);
+        IC.dirSet = true;
         next();
       });
     }else{
