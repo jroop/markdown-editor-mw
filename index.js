@@ -76,6 +76,7 @@ var markdown_attr = require('markdown-attr');
   }
   
   var init = function(opt){
+    //setup the linking so the browser can use the css and js files
     linkFiles(require.resolve('marked'),__dirname+'/public/marked.min.js');
     linkFiles(require.resolve('markdown-attr'),__dirname+'/public/markdown-attr.js');
     add(C,opt);
