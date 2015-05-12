@@ -24,6 +24,7 @@ var markdown_attr = require('markdown-attr');
     'readAuth':function(req,res,next){next();}, //do nothing pass a password auth middleware if needed
     'writeAuth':function(req,res,next){next();}, //do nothing pass a password auth middleware if needed
     'view':null, //view that will want to render in external Jade //include ../markdown-editor-mw/views/markdown-editor-mw.jade
+    'highlight_style':'default.css'
   };
   /*
    * Set highlighting for code
@@ -99,6 +100,7 @@ var markdown_attr = require('markdown-attr');
     res.locals.mde.baseUrl = req.baseUrl;
     res.locals.mde.originalUrl = req.originalUrl;
     res.locals.mde.path = req.path;
+
     next();
   }
   
