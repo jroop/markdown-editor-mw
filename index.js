@@ -66,14 +66,18 @@ var markdown_attr = require('markdown-attr');
   /*
    * Link files for the browser to be able to use
    */
-  var linkFiles = function(){
-    console.log('Linking files...');
-    fs.linkSync(require.resolve('marked'),__dirname+'/public/marked.min.js');
-    fs.linkSync(require.resolve('markdown-attr'),__dirname+'/public/markdown-attr.js');
+  var linkFiles = function(file,sym){
+    fs.lstat(sym,function(err,stats){
+      if(err){
+        console.log('Linking files...'+sym + ' --> ' + file);
+        fs.symlinkSync(file,sym);
+      }
+    });
   }
   
   var init = function(opt){
-    linkFiles();
+    linkFiles(require.resolve('marked'),__dirname+'/public/marked.min.js');
+    linkFiles(require.resolve('markdown-attr'),__dirname+'/public/markdown-attr.js');
     add(C,opt);
     console.log(C);
     
