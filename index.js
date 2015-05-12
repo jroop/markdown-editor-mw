@@ -27,7 +27,7 @@ var markdown_attr = require('markdown-attr');
     'highlight_style':'default.css'
   };
   var IC = { //internal config
-    'dirSet':null; 
+    'dirSet':null, 
   };
   /*
    * Set highlighting for code
