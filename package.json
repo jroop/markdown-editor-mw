@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/jroop/markdown-editor-mw",
   "dependencies": {
+    "express": "^4.12.3",
     "highlight.js": "^8.5.0",
     "markdown-attr": "0.0.4",
-    "marked": "^0.3.3"
+    "marked": "^0.3.3",
+    "serve-static": "^1.9.2"
   }
 }
