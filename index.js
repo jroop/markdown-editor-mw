@@ -100,7 +100,7 @@ var markdown_attr = require('markdown-attr');
     res.locals.mde.baseUrl = req.baseUrl;
     res.locals.mde.originalUrl = req.originalUrl;
     res.locals.mde.path = req.path;
-
+    res.locals.mde.highlight_style = C.highlight_style;
     next();
   }
   
