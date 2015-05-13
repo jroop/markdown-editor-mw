@@ -174,10 +174,11 @@ var markdown_attr = require('markdown-attr');
       var file = req.params.file+'.md';
       console.log(C.dir+'/'+file);
       fs.readFile(C.dir+'/'+file,function(err,content){
-        if(err){ 
-          console.log(err);
-          res.locals.mde.HTML = 'Error: Could not find '+req.url;
-          next();
+        if(err){ //file not found to send to edit
+          //console.log('No file found: '+err);
+          //res.locals.mde.HTML = 'Error: Could not find '+req.url;
+          //next();
+          res.redirect(req.baseUrl+'/'+req.params.file+'/edit'); //not found so create a new one at edit
         }else{
           content = content.toString();
           marked(content, function (err, content){
