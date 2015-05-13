@@ -1,6 +1,6 @@
 {
   "name": "markdown-editor-mw",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Lightweight middleware Markdown editor",
   "main": "index.js",
   "scripts": {
