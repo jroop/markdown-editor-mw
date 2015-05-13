@@ -72,11 +72,10 @@ var markdown_attr = require('markdown-attr');
    * Link files for the browser to be able to use
    */
   var linkFiles = function(file,sym){
-    fs.lstat(sym,function(err,stats){
-      if(err){
-        console.log('Linking files...'+sym + ' --> ' + file);
-        fs.symlinkSync(file,sym);
-      }
+    fs.unlink(sym,function(err,callback){
+      if(err) console.log("Error in unlink: "+err);
+      console.log('Linking files...'+sym + ' --> ' + file);
+      fs.symlinkSync(file,sym);
     });
   }
   
